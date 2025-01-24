@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class bulletScript : MonoBehaviour
@@ -15,6 +16,6 @@ public class bulletScript : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(0, dir, 0) * movespd * Time.deltaTime);
-        if (transform.position.y < -10) { Destroy(gameObject); }
+        if (math.abs(transform.position.y) > 10) { Destroy(gameObject); }
     }
 }
