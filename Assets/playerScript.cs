@@ -4,7 +4,7 @@ using UnityEngine;
 public class playerScript : MonoBehaviour
 {
     public int movespd;
-    public GameObject Bullet;
+    [SerializeField] private bulletSpawnerScript Spawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,8 +23,7 @@ public class playerScript : MonoBehaviour
         //shooting
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject bullet = Instantiate(Bullet, transform.position, transform.rotation);
-            bullet.GetComponent<bulletScript>().dir = 1;
+            Spawner.SpawnBullet(1, transform.position);
         }
     }
 }
