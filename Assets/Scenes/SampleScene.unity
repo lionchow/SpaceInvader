@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f88d140ae7aa4a44a5b4ee3aae063c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 52232802597006865, guid: 7f82bac3844763d4387c4b2fa53424a9, type: 3}
+  enemy: {fileID: 52232802597006865, guid: 3c4be2a6b94f8fe4fbaa92190566afe7, type: 3}
   width: 7
   height: 5
 --- !u!4 &344711764
