@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
+    private float shootinginterval = 0;
     public int movespd;
     [SerializeField] private bulletSpawnerScript Spawner;
 
@@ -18,12 +19,15 @@ public class playerScript : MonoBehaviour
         //movement
         if (Input.GetKey(KeyCode.A)) { transform.Translate(Vector2.left * movespd * Time.deltaTime); }
         if (Input.GetKey(KeyCode.D)) { transform.Translate(Vector2.right * movespd * Time.deltaTime); }
-        if (transform.position.x < -15.5 || transform.position.x > 15.5) { transform.position = new Vector3((float)(math.sign(transform.position.x) * 15.5), -8, 1); }
+        if (math.abs(transform.position.x) > 8.2) { transform.position = new Vector3((float)(math.sign(transform.position.x) * 8.2), -9, 1); }
+
+        shootinginterval -= Time.deltaTime * 2;
 
         //shooting
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && shootinginterval < 0)
         {
             Spawner.SpawnBullet(1, transform.position);
+            shootinginterval = 1;
         }
     }
 }
