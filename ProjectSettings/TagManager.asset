@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - enemy
   - bullet
+  - bulletSpawner
+  - enemy1
+  - enemy2
   layers:
   - Default
   - TransparentFX
